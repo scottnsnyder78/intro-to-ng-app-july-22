@@ -98,9 +98,21 @@
             ],
             "scripts": []
           }
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": [
+              "src/**/*.ts",
+              "src/**/*.html"
+            ]
+          }
         }
       }
     }
   },
-  "defaultProject": "intro-to-ng-app-july-22"
+  "defaultProject": "intro-to-ng-app-july-22",
+  "cli": {
+    "defaultCollection": "@angular-eslint/schematics"
+  }
 }
