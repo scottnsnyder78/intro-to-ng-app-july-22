@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-pokemon-team',
@@ -6,6 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./pokemon-team.component.css']
 })
 export class PokemonTeamComponent implements OnInit {
+
+  @Input() currentPokemonTeam: any | undefined = [];
 
   constructor() { }
 

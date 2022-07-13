@@ -1,1 +1,9 @@
-<p>pokemon-team-member works!</p>
+<section class="pokemon-team-member"
+         *ngIf="pokemonTeamMember !== undefined">
+
+  <span>{{ pokemonTeamMember?.name }}</span>
+  <img src="{{pokemonTeamMember?.image}}"
+       alt="Front sprite of {{pokemonTeamMember?.name}}">
+  <!-- <button (click)="removePokemonFromTeam(pokemonTeamMember)">Remove</button> -->
+  <button>Remove</button>
+</section>

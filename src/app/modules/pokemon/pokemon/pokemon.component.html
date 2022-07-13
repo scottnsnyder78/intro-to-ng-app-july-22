@@ -13,20 +13,6 @@
 <div class="pokemon-team-wrapper">
   <!-- <app-pokemon-team [currentPokemonTeam]="currentPokemonTeam"
                       (removeFromTeam)="removePokemonFromTeam($event)"></app-pokemon-team> -->
-  <div class="pokemon-team">
-    <!-- <app-pokemon-team-member *ngFor="let teamMember of currentPokemonTeam"
-                               [pokemonTeamMember]="teamMember"
-                               (removeFromTeam)="removePokemonFromTeam($event)"></app-pokemon-team-member> -->
-    <section class="pokemon-team-member"
-             *ngIf="pokemonTeamMember !== undefined">
-
-      <span>{{ pokemonTeamMember?.name }}</span>
-      <img src="{{pokemonTeamMember?.image}}"
-           alt="Front sprite of {{pokemonTeamMember?.name}}">
-      <!-- <button (click)="removePokemonFromTeam(pokemonTeamMember)">Remove</button> -->
-      <button>Remove</button>
-    </section>
-
-  </div>
+  <app-pokemon-team [currentPokemonTeam]=""></app-pokemon-team>
 
 </div>
