@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
 import { PokemonDetail, PokemonList } from '../models';
+import { PokemonService } from '../services/pokemon.service';
 
 @Component({
   selector: 'app-pokemon',
@@ -21,54 +23,7 @@ export class PokemonComponent implements OnInit {
       weight: 0
     }
 
-  // fake data from the initial call
-  pokemonList: PokemonList | null = {
-    count: 10,
-    next: 'string',
-    previous: 'string',
-    results: [
-      {
-        name: "bulbasaur",
-        url: "https://pokeapi.co/api/v2/pokemon/1/"
-      },
-      {
-        name: "ivysaur",
-        url: "https://pokeapi.co/api/v2/pokemon/2/"
-      },
-      {
-        name: "venusaur",
-        url: "https://pokeapi.co/api/v2/pokemon/3/"
-      },
-      {
-        name: "charmander",
-        url: "https://pokeapi.co/api/v2/pokemon/4/"
-      },
-      {
-        name: "charmeleon",
-        url: "https://pokeapi.co/api/v2/pokemon/5/"
-      },
-      {
-        name: "charizard",
-        url: "https://pokeapi.co/api/v2/pokemon/6/"
-      },
-      {
-        name: "squirtle",
-        url: "https://pokeapi.co/api/v2/pokemon/7/"
-      },
-      {
-        name: "wartortle",
-        url: "https://pokeapi.co/api/v2/pokemon/8/"
-      },
-      {
-        name: "blastoise",
-        url: "https://pokeapi.co/api/v2/pokemon/9/"
-      },
-      {
-        name: "caterpie",
-        url: "https://pokeapi.co/api/v2/pokemon/10/"
-      }
-    ]
-  }
+  pokemonList$!: Observable<PokemonList>
 
   pokemonTeamMember: PokemonDetail | null = {
     id: '1',
@@ -80,11 +35,11 @@ export class PokemonComponent implements OnInit {
   }
 
   // inject our services
-  constructor() { }
+  constructor(private pokemonService: PokemonService) { }
 
   // eslint-disable-next-line @angular-eslint/no-empty-lifecycle-method, no-empty-function
   ngOnInit(): void {
-    
+    this.pokemonList$ = this.pokemonService.getPokemonList();
   }
 
 }
