@@ -34,7 +34,17 @@
             "prefix": "app",
             "style": "kebab-case"
           }
-        ]
+        ],
+        "no-empty-function": [
+          "warn",
+          {
+            "allow": [
+              "constructors"
+            ]
+          }
+        ],
+        "no-console": "warn", // added
+        "no-var": "error" // added
       }
     },
     {

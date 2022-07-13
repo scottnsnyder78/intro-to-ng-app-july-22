@@ -1,0 +1,129 @@
+.pokemon-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 1rem;
+  gap: 1rem;
+}
+.pokemon-team-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* pokemon-list */
+.pokemon-list {
+  border: 1px solid lightgray;
+  border-radius: 7px;
+  box-shadow: 0 0 7px 0px lightgrey;
+  width: 12rem;
+  height: 25rem;
+  overflow-y: scroll;
+}
+/* nested in .pokemon-list */
+.pokemon-list ul {
+  padding: 0;
+  margin: 0;
+}
+.pokemon-list li {
+  list-style-type: none;
+  border-top: 1px solid lightgray;
+  width: 100%;
+  text-transform: uppercase;
+}
+.pokemon-list button {
+  all: unset;
+  box-sizing: border-box;
+  width: 100%;
+  cursor: pointer;
+  padding: 1rem;
+  border-top: 1px solid hsl(0, 0%, 83%);
+  background-color: inherit;
+}
+.pokemon-list button:focus {
+  outline: black solid 1px;
+  background-color: hsl(0, 0%, 82%);
+}
+.pokemon-list button:nth-of-type(1) {
+  border-top: none;
+}
+.pokemon-list button:hover {
+  background-color: hsl(0, 0%, 82%);
+}
+.pokemon-list button.highlight {
+  background-color: #006ae4;
+  color: white;
+  font-weight: bold;
+}
+/* end nest */
+.component-header.app-pokemon-list {
+  display: block;
+  font-size: 1.2rem;
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+@media screen and (max-width: 600px) {
+  .pokemon-list {
+    width: 23rem;
+  }
+}
+/* pokemon-team  */
+.component-header.app-pokemon-team {
+  display: block;
+  font-size: 1.2rem;
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+.team-constraints {
+  display: block;
+  font-size: 0.9rem;
+  color: rgb(97, 97, 97);
+  margin-bottom: 1rem;
+  text-align: center;
+}
+.pokemon-team {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  padding: 1rem;
+  min-height: 11rem;
+  width: 36rem;
+  max-width: 36rem;
+  border: 1px solid lightgray;
+  border-radius: 7px;
+  box-shadow: 0 0 7px 0px lightgrey;
+}
+@media screen and (max-width: 600px) {
+  .pokemon-team {
+    width: 23rem;
+    justify-content: center;
+  }
+}
+/* pokemon-team-member */
+.pokemon-team-member {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+/* nested in pokemon-team-member */
+.pokemon-team-member img {
+  max-width: 5rem;
+}
+.pokemon-team-member button {
+  font-family: inherit;
+  font-weight: bold;
+  background-color: #006ae4;
+  color: white;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid black;
+  outline: white;
+  cursor: pointer;
+}
+.pokemon-team-member button:focus {
+  outline: black solid 1px;
+  background-color: #0059be;
+}
+.pokemon-team-member span {
+  text-transform: capitalize;
+}
