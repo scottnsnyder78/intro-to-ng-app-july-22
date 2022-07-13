@@ -84,6 +84,7 @@ export class PokemonComponent implements OnInit {
 
   // eslint-disable-next-line @angular-eslint/no-empty-lifecycle-method, no-empty-function
   ngOnInit(): void {
+    
   }
 
 }
