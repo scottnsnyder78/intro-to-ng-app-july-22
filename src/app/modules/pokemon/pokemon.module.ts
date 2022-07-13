@@ -3,9 +3,9 @@ import { CommonModule } from '@angular/common';
 import { PokemonComponent } from './pokemon/pokemon.component';
 import { RouterModule, Routes } from '@angular/router';
 import { PokemonListComponent } from './pokemon-list/pokemon-list.component';
+import { PokemonDetailComponent } from './pokemon-detail/pokemon-detail.component';
 import { PokemonTeamComponent } from './pokemon-team/pokemon-team.component';
 import { PokemonTeamMemberComponent } from './pokemon-team-member/pokemon-team-member.component';
-import { PokemonDetailComponent } from './pokemon-detail/pokemon-detail.component';
 
 export const pokemonRoutes: Routes = [
   {
@@ -18,9 +18,9 @@ export const pokemonRoutes: Routes = [
   declarations: [
     PokemonComponent,
     PokemonListComponent,
+    PokemonDetailComponent,
     PokemonTeamComponent,
-    PokemonTeamMemberComponent,
-    PokemonDetailComponent
+    PokemonTeamMemberComponent
   ],
   imports: [
     CommonModule,

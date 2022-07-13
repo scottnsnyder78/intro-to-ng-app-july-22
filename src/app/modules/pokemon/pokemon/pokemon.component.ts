@@ -1,19 +1,27 @@
 import { Component, OnInit } from '@angular/core';
+import { PokemonDetail, PokemonList } from '../models';
+
 @Component({
   selector: 'app-pokemon',
   templateUrl: './pokemon.component.html',
   styleUrls: ['./pokemon.component.css']
 })
 export class PokemonComponent implements OnInit {
+
+
   // app-pokemon-detail
-  selectedPokemon: PokemonDetail | undefined = {
-    id: '1',
-    name: 'bulbasaur',
-    image: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png',
-    type: 'grass/poison',
-    height: 0,
-    weight: 0
-  }
+  // fake data that returns fromt he call to pokemon
+  selectedPokemon: PokemonDetail | undefined =
+    {
+      id: '1',
+      name: 'bulbasaur',
+      image: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png',
+      type: 'grass/poison',
+      height: 0,
+      weight: 0
+    }
+
+  // fake data from the initial call
   pokemonList: PokemonList | null = {
     count: 10,
     next: 'string',
@@ -61,6 +69,7 @@ export class PokemonComponent implements OnInit {
       }
     ]
   }
+
   pokemonTeamMember: PokemonDetail | null = {
     id: '1',
     name: 'bulbasaur',
@@ -69,26 +78,14 @@ export class PokemonComponent implements OnInit {
     height: 0,
     weight: 0
   }
+
+  // inject our services
   constructor() { }
+
   // eslint-disable-next-line @angular-eslint/no-empty-lifecycle-method, no-empty-function
   ngOnInit(): void {
   }
+
 }
-interface PokemonDetail {
-  id: string;
-  name: string;
-  image: string;
-  type: string;
-  height: number;
-  weight: number;
-}
-interface PokemonList {
-  count: number;
-  next: string;
-  previous: string;
-  results: PokemonListItem[];
-}
-interface PokemonListItem {
-  name: string;
-  url: string;
-}
+
+
