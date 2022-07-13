@@ -3,11 +3,10 @@
   <!-- <app-pokemon-detail [selectedPokemon]="pokemonDetail$ | async"
                         (addToTeam)="addPokemonToTeam($event)"></app-pokemon-detail> -->
 
-  <app-pokemon-detail [selectedPokemon]="selectedPokemon"></app-pokemon-detail>
+  <app-pokemon-detail [selectedPokemon]="selectedPokemon$ | async"></app-pokemon-detail>
 
-  <!-- <app-pokemon-list [pokemonList]="pokemonList$ | async"
-                    (emitSelectedPokemon)="requestPokemonDetail($event)"></app-pokemon-list> -->
-  <app-pokemon-list [pokemonList]="pokemonList$ | async"></app-pokemon-list>
+  <app-pokemon-list [pokemonList]="pokemonList$ | async"
+                    (emitSelectedPokemon)="requestPokemonDetail($event)"></app-pokemon-list>
 </div>
 
 <div class="pokemon-team-wrapper">

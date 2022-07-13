@@ -1,5 +1,5 @@
 <section class="pokemon-detail">
-  <div *ngIf="selectedPokemon !== undefined"
+  <div *ngIf="selectedPokemon"
        class="wrapper">
     <h2>#{{selectedPokemon?.id}} {{selectedPokemon?.name}}</h2>
     <img src="{{selectedPokemon?.image}}"

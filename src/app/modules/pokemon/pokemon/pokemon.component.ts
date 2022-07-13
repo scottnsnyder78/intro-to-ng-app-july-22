@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
-import { PokemonDetail, PokemonList } from '../models';
+import { PokemonDetail, PokemonList, PokemonListItem } from '../models';
 import { PokemonService } from '../services/pokemon.service';
 
 @Component({
@@ -23,6 +23,8 @@ export class PokemonComponent implements OnInit {
       weight: 0
     }
 
+  selectedPokemon$: Observable<any> | undefined;
+
   pokemonList$!: Observable<PokemonList>
 
   pokemonTeamMember: PokemonDetail | null = {
@@ -40,6 +42,11 @@ export class PokemonComponent implements OnInit {
   // eslint-disable-next-line @angular-eslint/no-empty-lifecycle-method, no-empty-function
   ngOnInit(): void {
     this.pokemonList$ = this.pokemonService.getPokemonList();
+  }
+
+  requestPokemonDetail(pokemonListItem: PokemonListItem): void {
+    this.selectedPokemon$ = this.pokemonService.getPokemonDetail(pokemonListItem.url);
+    this.selectedPokemon$.subscribe();
   }
 
 }
